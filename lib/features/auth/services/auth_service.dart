@@ -32,6 +32,7 @@ class AuthService {
           'Content-Type': 'application/json; charset=UTF-8',
         },
       );
+      // ignore: use_build_context_synchronously
       httpErrorHandle(response: res, context: context, onSuccess: () {
         showSnackBar(
             context, 'Account created! Login with the same credentials');
