@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 import compressoin from 'compression';
 import cors from 'cors'
 import dbConnect from './config/dbConnection';
+import authRouter from './routes/auth_route';
 
 const app = express()
 
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 
 dbConnect();
+app.use('/',authRouter);
 
 server.listen(8080, ()=>{
 console.log('servet running on http://localhost:8080/');
